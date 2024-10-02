@@ -54,6 +54,24 @@
 </head>
 <body>
 
+    <!-- Preloader HTML -->
+    <div id="preloader">
+        <div class="progress-container" aria-labelledby="loading-message">
+            <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                <div class="progress-segment green"></div>
+                <div class="progress-segment yellow"></div>
+                <div class="progress-segment red"></div>
+            </div>
+        </div>
+        <div id="loading-percentage" class="loading-percentage">0%</div>
+        <div id="loading-message" class="preloader-message" aria-live="polite">
+            <span class="loading-text">CCN -</span> 
+            <span class="future-text">Communauté Congolaise de Nanjing</span>
+        </div>
+    </div>
+    
+    <div id="main-content" style="display: none;"></div>
+
     <header id="masthead" class="site-header" data-anchor-target=".hero" data-top="background: rgba(255,255,255,0); padding: 30px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0);" data-top-bottom="background: rgba(255,255,255,1); padding: 10px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.2);">
         <nav id="primary-navigation" class="site-navigation">
             <div class="container">
@@ -161,7 +179,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="skill">
-                            <h4>Soutien à l’Entrepreneuriat</h4>
+                            <h4>Soutien l’Entrepreneuriat</h4>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" data-transitiongoal="90"></div><!-- /.progress-bar -->
                             </div><!-- /.progress -->
@@ -215,32 +233,52 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="team-member">
-                            <img src="assets/img/bureau1.jpg" class="img-res" alt="President">
-                            <h4 align="justify">GOMA Christian</h4>
-                            <p align="justify">Président</p>
-                            <p align="justify">En tant que Président, Il occupe la fonction la plus élevée au sein de notre communauté, jouant un rôle essentiel dans le leadership et la direction stratégique. Sa mission est de guider et de représenter l’organisation, en veillant à ce que ses objectifs soient atteints et que ses valeurs soient respectées. Il est responsable de la définition des grandes orientations et de la vision à long terme, tout en supervisant la mise en œuvre des stratégies et des projets. Sa contribution est déterminante pour assurer le dynamisme et la prospérité de la communauté.</p>
+                        <div class="our-team">
+                            <div class="pic">
+                                <img src="assets/img/bureau1.jpg" alt="President">
+                            </div>
+                            <div class="team-content">
+                                <h4 class="title">GOMA Christian</h4>
+                                <span class="post">Président</span>
+                            </div>
+                            <p class="description" align="justify">
+                                En tant que Président, Il occupe la fonction la plus élevée au sein de notre communauté, jouant un rôle essentiel dans le leadership et la direction stratégique. Sa mission est de guider et de représenter l’organisation, en veillant à ce que ses objectifs soient atteints et que ses valeurs soient respectées.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="team-member">
-                            <img src="assets/img/bureau2.jpg" class="img-res" alt="Office Member 1">
-                            <h4 align="justify">GANGA Japhet</h4>
-                            <p align="justify">Secrétaire Général (sortant)</p>
-                            <p align="justify">En tant que Secrétaire Général, il occupe une position clé pour assurer la continuité et l’efficacité administrative de notre communauté. Il est chargé de maintenir une organisation impeccable des documents et des dossiers, garantissant que toutes les communications internes et externes soient précises et opportunes. Son rôle inclut également la gestion des réunions, de la préparation des ordres du jour à la rédaction des comptes rendus, veillant ainsi à ce que toutes les décisions et discussions soient correctement consignées et suivies.</p>
+                        <div class="our-team">
+                            <div class="pic">
+                                <img src="assets/img/bureau2.jpg" alt="Office Member 1">
+                            </div>
+                            <div class="team-content">
+                                <h4 class="title">GANGA Japhet</h4>
+                                <span class="post">Secrétaire Général (sortant)</span>
+                            </div>
+                            <p class="description" align="justify">
+                                En tant que Secrétaire Général, il occupe une position clé pour assurer la continuité et l’efficacité administrative de notre communauté. Il est chargé de maintenir une organisation impeccable des documents et des dossiers.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="team-member">
-                            <img src="assets/img/bureau3.jpg" class="img-res" alt="Office Member 2">
-                            <h4 align="justify">GAMA Glorya</h4>
-                            <p align="justify">Trésorière</p>
-                            <p align="justify">En tant que Trésorière, son rôle est crucial pour garantir la santé financière et la transparence des opérations au sein de notre communauté. Elle est responsable de la gestion rigoureuse des finances, assurant un suivi précis des revenus et des dépenses. Sa mission inclut l'élaboration et le contrôle du budget mensuel, annuel, ainsi que la préparation des rapports financiers réguliers pour informer les membres et les dirigeants de l'état des finances.</p>
+                        <div class="our-team">
+                            <div class="pic">
+                                <img src="assets/img/bureau3.jpg" alt="Office Member 2">
+                            </div>
+                            <div class="team-content">
+                                <h4 class="title">GAMA Glorya</h4>
+                                <span class="post">Trésorière</span>
+                            </div>
+                            <p class="description" align="justify">
+                                En tant que Trésorière, son rôle est crucial pour garantir la santé financière et la transparence des opérations au sein de notre communauté. Elle est responsable de la gestion rigoureuse des finances.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!-- /.section-team -->
+            
+        </section>
+        <!-- /.section-team -->
 
         <section id="service" class="site-section section-services overlay text-center">
             <div class="container">
