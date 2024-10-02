@@ -35,15 +35,27 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 <body>
 
+    <!-- Preloader HTML -->
+    <div id="preloader">
+        <div class="progress-container" aria-labelledby="loading-message">
+            <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                <div class="progress-segment green"></div>
+                <div class="progress-segment yellow"></div>
+                <div class="progress-segment red"></div>
+            </div>
+        </div>
+        <div id="loading-percentage" class="loading-percentage">0%</div>
+        <div id="loading-message" class="preloader-message" aria-live="polite">
+            <span class="loading-text">CCN -</span> 
+            <span class="future-text">Communauté Congolaise de Nanjing</span>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;"></div>
     <header id="masthead" class="site-header" data-anchor-target=".hero" data-top="background: rgba(255,255,255,0); padding: 30px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0);" data-top-bottom="background: rgba(255,255,255,1); padding: 10px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.2);">
         <nav id="primary-navigation" class="site-navigation">
             <div class="container">
@@ -133,6 +145,25 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Text Animation Section -->
+            <div class="container">
+                <div class="text-effect">
+                    <!-- CCN Main Text -->
+                    <div class="main-text">
+                        <span>C</span><span>C</span><span>N</span>
+                    </div>
+                    <!-- Subscript Text: Communauté Congolaise de Nanjing -->
+                    <div class="sub-text">
+                        <span>C</span><span>o</span><span>m</span><span>m</span><span>u</span><span>n</span><span>a</span><span>u</span><span>t</span><span>é</span>
+                        <span>C</span><span>o</span><span>n</span><span>g</span><span>o</span><span>l</span><span>a</span><span>i</span><span>s</span><span>e</span>
+                        <span>d</span><span>e</span>
+                        <span>N</span><span>a</span><span>n</span><span>j</span><span>i</span><span>n</span><span>g</span>
+                    </div>
+                </div>
+            </div>
+
+
         </section>
         <!-- /.section-membership -->
 
