@@ -1,9 +1,8 @@
 /*
- * Theme Name: 
- * Theme URI: 
- * Author: 
- * Author URI/Mail: 
- * Version: 1.0
+ * Theme Name: CCN
+ * Author: Christ ND
+ * Author URI/Mail: christnd@congolaisdenanjing.com
+ * Version: 2.0
  * */
 
 /* FONT
@@ -161,7 +160,7 @@ html, body {
     display: block;
     max-width: 90%;
     height: auto;
-    object-fit: contain; /* or 'cover' depending on your needs */
+    object-fit: contain; /* or 'cover' depending */
 }
 
 
@@ -632,4 +631,340 @@ a.icon-up-bg:hover {color: #212121;}
 }
 
 /* Team members */
+
+.our-team {
+    text-align: center;
+    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.our-team:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Elevate the card on hover */
+    background-color: #e0eaf5; /* Subtle background change */
+}
+
+.our-team .pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #4a76a8;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.our-team:hover .pic {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    border-color: #3b5f87; /* Darker border on hover */
+}
+
+.our-team img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.our-team .team-content {
+    padding: 10px;
+    background-color: #4a76a8;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.our-team:hover .team-content {
+    background-color: #3b5f87; /* Slightly darker blue on hover */
+}
+
+.our-team .title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.our-team:hover .title {
+    color: #ffffff; /* bright title text on hover */
+}
+
+.our-team .post {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ddd;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.our-team:hover .post {
+    color: #ffffff; /* Brighter post text on hover */
+}
+
+.our-team .description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.our-team:hover .description {
+    color: #444; /* Slight darkening of text */
+    background-color: #f5f5f5; /* Subtle background change */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Enhance box shadow */
+}
+
+@media only screen and (max-width: 990px) {
+    .our-team {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 359px) {
+    .our-team .pic {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+
+/* <!-- Text Animation Section --> */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-effect {
+    color: #333;
+    text-align: center;
+}
+
+/* Main Text: CCN */
+.text-effect .main-text {
+    font-family: 'Lora', serif;
+    font-size: 100px; /* Larger font for main text */
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.text-effect .main-text span {
+    text-shadow: 0px 2px 10px rgba(46, 74, 81, 0.3);
+    display: inline-block;
+    opacity: 0;
+    animation: moveLetters 2.6s infinite ease-in-out;
+}
+
+/* Animation delay for CCN (Main Text) */
+.text-effect .main-text span:nth-child(1) { animation-delay: 0.1s; }
+.text-effect .main-text span:nth-child(2) { animation-delay: 0.3s; }
+.text-effect .main-text span:nth-child(3) { animation-delay: 0.5s; }
+
+/* Subscript Text: Communauté Congolaise de Nanjing */
+.text-effect .sub-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px; /* Smaller font for subscript */
+    font-weight: 500;
+    margin-top: 15px;
+    color: #555;
+    letter-spacing: 0.08em; /* Add more space between letters for clarity */
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.text-effect .sub-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: moveLettersSub 2.6s infinite ease-in-out;
+    text-shadow: none; /* No shadow for subscript */
+    transition: color 0.3s ease;
+}
+
+/* Subscript animation delay (Synchronized with main text) */
+.text-effect .sub-text span:nth-child(1) { animation-delay: 0.6s; }
+.text-effect .sub-text span:nth-child(2) { animation-delay: 0.7s; }
+.text-effect .sub-text span:nth-child(3) { animation-delay: 0.8s; }
+/* Continue nth-child animations for remaining letters... */
+
+.text-effect .sub-text span:hover {
+    color: #333; /* Change color on hover for subtle interactivity */
+}
+
+/* Keyframes for Main Text Animation */
+@keyframes moveLetters {
+    0% {
+        opacity: 0;
+        transform: translateX(-15vw);
+    }
+    33.3%, 66% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(15vw);
+    }
+}
+
+/* Keyframes for Subscript Animation */
+@keyframes moveLettersSub {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px); /* Subtle vertical entrance */
+    }
+    33.3%, 66% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px); /* Subtle vertical exit */
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .text-effect .main-text {
+        font-size: 70px;
+    }
+
+    .text-effect .sub-text {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .text-effect .main-text {
+        font-size: 60px;
+    }
+
+    .text-effect .sub-text {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .text-effect .main-text {
+        font-size: 50px;
+    }
+
+    .text-effect .sub-text {
+        font-size: 18px;
+    }
+}
+
+
+
+
+/* Preloader Styling */
+/* Container */
+/* Preloader Container */
+#preloader {
+    position: fixed; /* Fixed position to cover the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background */
+    z-index: 9999; /* High z-index to appear above other content */
+}
+
+/* Progress Container */
+.progress-container {
+    width: 80%; /* Adjust width as needed */
+    background-color: #ddd; /* Light grey background for the progress bar */
+    border-radius: 25px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow of segments */
+    position: relative;
+    height: 30px; /* Height of the progress bar */
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    height: 100%;
+    width: 0; /* Start at 0 width */
+}
+
+/* Progress Segment Styles */
+.progress-segment {
+    height: 100%;
+}
+
+.green {
+    background-color: #009e49; /* Congo Brazzaville green */
+    width: 33.33%; /* Each segment takes up one-third */
+}
+
+.yellow {
+    background-color: #ffcc00; /* Congo Brazzaville yellow */
+    width: 33.33%;
+}
+
+.red {
+    background-color: #ce1126; /* Congo Brazzaville red */
+    width: 33.33%;
+}
+
+/* Message Styling */
+.preloader-message {
+    margin-top: 20px;
+    font-size: 24px; /* Larger font size for impact */
+    color: #333; /* Dark text color */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px; /* Add letter spacing for a modern look */
+    text-transform: uppercase; /* Uppercase for emphasis */
+}
+
+/* Percentage Display */
+.loading-percentage {
+    margin-top: 10px; /* Space above percentage */
+    font-size: 20px; /* Font size for percentage */
+    color: #333; /* Dark text color */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .progress-container {
+        width: 90%; /* Adjust for smaller screens */
+    }
+
+    .preloader-message {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .loading-percentage {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+}
+
+/* Visually hide elements but keep them accessible */
+[hidden] {
+    display: none !important;
+}
+
+
 
