@@ -87,3 +87,40 @@ $(function() {
     });
     
 });
+
+
+
+// Preloader Functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const progressBar = document.querySelector('.progress-bar');
+    const loadingPercentage = document.getElementById('loading-percentage');
+    let percentage = 0;
+
+    // Simulate loading progress
+    const interval = setInterval(() => {
+        if (percentage < 100) {
+            percentage++;
+            loadingPercentage.textContent = percentage + '%';
+            progressBar.style.width = percentage + '%';
+        } else {
+            clearInterval(interval);
+            // Show main content after loading is complete
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 500);
+        }
+    }, 50);
+});
+
+$(document).ready(function() {
+    var target = $(".hero");
+    if (target.length) { // Check if the element exists
+        var offset = target.offset().top;
+        // Your logic using the offset
+    } else {
+        console.warn("Element .hero not found.");
+    }
+});
+
+
