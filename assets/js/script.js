@@ -124,3 +124,199 @@ $(document).ready(function() {
 });
 
 
+// EmailJs
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with publicKey
+    emailjs.init({
+      publicKey: "OJlE0WrG1_Lzuyxzb", //  actual public key from EmailJS
+    });
+
+    // Utility function to show feedback
+    function showFeedback(form, message, isSuccess) {
+      const feedback = document.createElement('div');
+      feedback.className = isSuccess ? 'alert alert-success' : 'alert alert-danger';
+      feedback.innerText = message;
+      form.prepend(feedback);
+
+      // Remove feedback after 5 seconds
+      setTimeout(() => {
+        feedback.remove();
+      }, 5000);
+    }
+
+    // Utility function to validate phone number
+    function validatePhone(phone) {
+      const phonePattern = /^[0-9]{10,15}$/;
+      return phonePattern.test(phone);
+    }
+
+    // Handle "Contact-Nous" Form Submission
+    const contactForm = document.querySelector('#contact_nous_form');
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Custom validation
+      const name = document.querySelector('#contact-name').value.trim();
+      const email = document.querySelector('#contact-email').value.trim();
+      const message = document.querySelector('#contact-message').value.trim();
+      let isValid = true;
+
+      if (name === '') {
+        isValid = false;
+        contactForm.querySelector('#contact-name').classList.add('is-invalid');
+      } else {
+        contactForm.querySelector('#contact-name').classList.remove('is-invalid');
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        isValid = false;
+        contactForm.querySelector('#contact-email').classList.add('is-invalid');
+      } else {
+        contactForm.querySelector('#contact-email').classList.remove('is-invalid');
+      }
+
+      if (message === '') {
+        isValid = false;
+        contactForm.querySelector('#contact-message').classList.add('is-invalid');
+      } else {
+        contactForm.querySelector('#contact-message').classList.remove('is-invalid');
+      }
+
+      if (!isValid) {
+        showFeedback(contactForm, 'Veuillez corriger les erreurs dans le formulaire.', false);
+        return;
+      }
+
+      // Send the form using EmailJS
+      emailjs.sendForm('service_d5ri69p', 'template_p1ipl4f', this)
+        .then(function(response) {
+          showFeedback(contactForm, 'Message envoyé avec succès! Nous vous contacterons bientôt.', true);
+          contactForm.reset();
+        }, function(error) {
+          showFeedback(contactForm, 'Erreur lors de l\'envoi du message, veuillez réessayer.', false);
+        });
+    });
+
+    // Handle "Adhesion" Form Submission
+    const adhesionForm = document.querySelector('#adhesion_form');
+    adhesionForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Custom validation
+      const firstName = document.querySelector('#adhesion-first-name').value.trim();
+      const lastName = document.querySelector('#adhesion-last-name').value.trim();
+      const email = document.querySelector('#adhesion-email').value.trim();
+      const phone = document.querySelector('#adhesion-phone').value.trim();
+      const city = document.querySelector('#adhesion-city').value.trim();
+      const country = document.querySelector('#adhesion-country').value.trim();
+      const status = document.querySelector('#adhesion-status').value;
+      const reason = document.querySelector('#adhesion-reason').value.trim();
+      let isValid = true;
+
+      if (firstName === '') {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-first-name').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-first-name').classList.remove('is-invalid');
+      }
+
+      if (lastName === '') {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-last-name').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-last-name').classList.remove('is-invalid');
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-email').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-email').classList.remove('is-invalid');
+      }
+
+      if (!validatePhone(phone)) {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-phone').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-phone').classList.remove('is-invalid');
+      }
+
+      if (city === '') {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-city').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-city').classList.remove('is-invalid');
+      }
+
+      if (country === '') {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-country').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-country').classList.remove('is-invalid');
+      }
+
+      if (!status) {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-status').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-status').classList.remove('is-invalid');
+      }
+
+      if (reason === '') {
+        isValid = false;
+        adhesionForm.querySelector('#adhesion-reason').classList.add('is-invalid');
+      } else {
+        adhesionForm.querySelector('#adhesion-reason').classList.remove('is-invalid');
+      }
+
+      if (!isValid) {
+        showFeedback(adhesionForm, 'Veuillez corriger les erreurs dans le formulaire.', false);
+        return;
+      }
+
+      // Send the form using EmailJS
+      emailjs.sendForm('service_d5ri69p', 'template_p2jvjv4', this)
+        .then(function(response) {
+          showFeedback(adhesionForm, 'Demande envoyée avec succès! Nous vous contacterons bientôt.', true);
+          adhesionForm.reset();
+        }, function(error) {
+          showFeedback(adhesionForm, 'Erreur lors de l\'envoi de la demande, veuillez réessayer.', false);
+        });
+    });
+    document.getElementById('membership-form').addEventListener('submit', function(event) {
+        let formIsValid = true;
+      
+        // Example: Validate "Prénom" field
+        const prenomField = document.getElementById('prenom');
+        if (prenomField.value.trim() === "") {
+          prenomField.classList.add('is-invalid');
+          prenomField.nextElementSibling.style.display = 'block'; // Show feedback
+          formIsValid = false;
+        } else {
+          prenomField.classList.remove('is-invalid');
+          prenomField.nextElementSibling.style.display = 'none'; // Hide feedback
+        }
+      
+        
+        const emailField = document.getElementById('email');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailField.value.trim())) {
+          emailField.classList.add('is-invalid');
+          emailField.nextElementSibling.style.display = 'block'; // Show feedback
+          formIsValid = false;
+        } else {
+          emailField.classList.remove('is-invalid');
+          emailField.nextElementSibling.style.display = 'none'; // Hide feedback
+        }
+      
+        // Prevent form submission if validation fails
+        if (!formIsValid) {
+          event.preventDefault();
+        }
+      });
+      
+  });
+
