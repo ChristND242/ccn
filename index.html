@@ -31,6 +31,9 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap CSS (Optional for styling) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
@@ -320,7 +323,7 @@
                         <h4>Années d'existence</h4>
                     </div>
                     <div class="col-sm-4 col-xs-12">
-                        <p class="counter start" data-to="37" data-speed="2000">0</p>       
+                        <p class="counter start" data-to="30" data-speed="2000">0</p>       
                         <h4>Nombre de Membres Officiels</h4>      
                     </div>
                     <div class="col-sm-4 col-xs-12">
@@ -333,21 +336,24 @@
 
         <section id="contact" class="site-section section-form text-center">
             <div class="container">
-                <h3>Pour toute réclamation</h3>
+                <h3>Contactez-nous</h3>
                 <img src="assets/img/lines.svg" class="img-lines" alt="lines">
-                <form action="https://formsubmit.co/christnd@congolaisdenanjing.com" method="POST">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <input type="text" name="name" class="form-control mt-x-0" placeholder="Nom" required>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>   
-                        </div>
-                        <div class="col-sm-12">
-                            <textarea name="message" id="message" class="form-control" placeholder="Message" required></textarea>
-                        </div>
+                <form id="contact_nous_form" method="POST">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" name="name" id="contact-name" class="form-control mt-x-0" placeholder="Nom" required>
+                      <div class="invalid-feedback">Veuillez entrer votre nom.</div>
                     </div>
-                    <button class="btn btn-border" type="submit">Envoyer <span class="glyphicon glyphicon-send"></span></button>
+                    <div class="col-sm-6">
+                      <input type="email" name="email" id="contact-email" class="form-control" placeholder="Email" required>
+                      <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
+                    </div>
+                    <div class="col-sm-12">
+                      <textarea name="message" id="contact-message" class="form-control" placeholder="Message" required></textarea>
+                      <div class="invalid-feedback">Veuillez entrer votre message.</div>
+                    </div>
+                  </div>
+                  <button class="btn btn-border" type="submit">Envoyer <span class="glyphicon glyphicon-send"></span></button>
                 </form>
             </div>
 
@@ -505,6 +511,19 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    <!-- Script to handle EmailJs -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "OJlE0WrG1_Lzuyxzb", // EJS public key
+        });
+    })();
+    </script>
+
     
 
     <!-- Bootstrap core JavaScript
