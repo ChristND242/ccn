@@ -31,6 +31,9 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap CSS (Optional for styling) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
@@ -94,55 +97,58 @@
         <section id="membership" class="site-section section-membership text-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <h2>Demande d'adhésion</h2>
-                        <img src="assets/img/lines.svg" class="img-lines" alt="lines">
-                        <p>Rejoignez la Communauté Congolaise de Nanjing en remplissant ce formulaire. Nous serons ravis de vous accueillir parmi nous.</p>
-                    </div>
+                  <div class="col-md-6 col-md-offset-3">
+                    <h2>Demande d'adhésion</h2>
+                    <img src="assets/img/lines.svg" class="img-lines" alt="lines">
+                    <p>Rejoignez la Communauté Congolaise de Nanjing en remplissant ce formulaire. Nous serons ravis de vous accueillir parmi nous.</p>
+                  </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <form action="https://formsubmit.co/christnd@congolaisdenanjing.com" method="POST">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input type="text" name="first_name" class="form-control mt-x-0" placeholder="Prénom*" required>
-                                    <br>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" name="last_name" class="form-control" placeholder="Nom*" required>
-                                    <br>   
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="email" name="email" class="form-control" placeholder="Email*" required>
-                                    <br>   
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="tel" name="phone" class="form-control" placeholder="Téléphone*" required>
-                                    <br>   
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" name="city" class="form-control" placeholder="Ville*" required>
-                                    <br>   
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" name="country" class="form-control" placeholder="Pays*" required>   
-                                </div>
-                                <div class="col-sm-12">
-                                    <select name="status" class="form-control" required>
-                                        <option value="" disabled selected>Statut actuel*</option>
-                                        <option value="student">Étudiant</option>
-                                        <option value="worker">Travailleur</option>
-                                        <option value="military">Stagiaire Militaire</option>
-                                        <option value="other">Autre</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-12">
-                                    <textarea name="reason" id="reason" class="form-control" placeholder="Pourquoi souhaitez-vous rejoindre la CCN?" required></textarea>
-                                </div>
-                            </div>
-                            <button class="btn btn-fill" type="submit">Envoyer la demande <span class="glyphicon glyphicon-send"></span></button>
-                        </form>
-                    </div>
+                  <div class="col-md-8 col-md-offset-2">
+                    <form id="adhesion_form" method="POST">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <input type="text" name="first_name" id="adhesion-first-name" class="form-control mt-x-0" placeholder="Prénom*" required>
+                          <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="text" name="last_name" id="adhesion-last-name" class="form-control" placeholder="Nom*" required>
+                          <div class="invalid-feedback">Veuillez entrer votre nom.</div>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="email" name="email" id="adhesion-email" class="form-control" placeholder="Email*" required>
+                          <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="tel" name="phone" id="adhesion-phone" class="form-control" placeholder="Téléphone*" required pattern="^[0-9]{10,15}$">
+                          <div class="invalid-feedback">Veuillez entrer un numéro de téléphone valide (10-15 chiffres).</div>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="text" name="city" id="adhesion-city" class="form-control" placeholder="Ville*" required>
+                          <div class="invalid-feedback">Veuillez entrer votre ville.</div>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="text" name="country" id="adhesion-country" class="form-control" placeholder="Pays*" required>
+                          <div class="invalid-feedback">Veuillez entrer votre pays.</div>
+                        </div>
+                        <div class="col-sm-12">
+                          <select name="status" id="adhesion-status" class="form-control" required>
+                            <option value="" disabled selected>Statut actuel*</option>
+                            <option value="Étudiant">Étudiant</option>
+                            <option value="Travailleur">Travailleur</option>
+                            <option value="Stagiaire Militaire">Stagiaire Militaire</option>
+                            <option value="Autre">Autre</option>
+                          </select>
+                          <div class="invalid-feedback">Veuillez sélectionner votre statut actuel.</div>
+                        </div>
+                        <div class="col-sm-12">
+                          <textarea name="reason" id="adhesion-reason" class="form-control" placeholder="Pourquoi souhaitez-vous rejoindre la CCN?" required></textarea>
+                          <div class="invalid-feedback">Veuillez expliquer pourquoi vous souhaitez rejoindre la CCN.</div>
+                        </div>
+                      </div>
+                      <button class="btn btn-fill" type="submit">Envoyer la demande <span class="glyphicon glyphicon-send"></span></button>
+                    </form>
+                  </div>
                 </div>
             </div>
 
@@ -198,6 +204,18 @@
             </div>
         </div>
     </footer><!-- /#footer -->
+
+    <!-- Script to handle EmailJs -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "OJlE0WrG1_Lzuyxzb", // EJS public key
+        });
+    })();
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
