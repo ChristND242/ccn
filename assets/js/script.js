@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return phonePattern.test(phone);
     }
 
-    // Handle "Contact-Nous" Form Submission
+    // Handle "Contact-Nous" Form Submission (Do not remove or modify this section)
     const contactForm = document.querySelector('#contact_nous_form');
     contactForm.addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent default form submission
@@ -286,37 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
           showFeedback(adhesionForm, 'Erreur lors de l\'envoi de la demande, veuillez réessayer.', false);
         });
     });
-    document.getElementById('membership-form').addEventListener('submit', function(event) {
-        let formIsValid = true;
-      
-        // Example: Validate "Prénom" field
-        const prenomField = document.getElementById('prenom');
-        if (prenomField.value.trim() === "") {
-          prenomField.classList.add('is-invalid');
-          prenomField.nextElementSibling.style.display = 'block'; // Show feedback
-          formIsValid = false;
-        } else {
-          prenomField.classList.remove('is-invalid');
-          prenomField.nextElementSibling.style.display = 'none'; // Hide feedback
-        }
-      
-        
-        const emailField = document.getElementById('email');
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailField.value.trim())) {
-          emailField.classList.add('is-invalid');
-          emailField.nextElementSibling.style.display = 'block'; // Show feedback
-          formIsValid = false;
-        } else {
-          emailField.classList.remove('is-invalid');
-          emailField.nextElementSibling.style.display = 'none'; // Hide feedback
-        }
-      
-        // Prevent form submission if validation fails
-        if (!formIsValid) {
-          event.preventDefault();
-        }
-      });
-      
-  });
+});
+
 
