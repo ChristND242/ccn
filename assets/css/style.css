@@ -685,11 +685,17 @@ a.icon-up-bg:hover {color: #212121;}
 
 .our-team .title {
     font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+    font-weight: 700;
+    color: #f0f0f0; /* Metallic base color */
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-shadow: 
+        1px 1px 1px rgba(0, 0, 0, 0.8), 
+        -1px -1px 1px rgba(255, 255, 255, 0.5); /* Metallic shine */
 }
+
+
+
 
 .our-team:hover .title {
     color: #ffffff; /* bright title text on hover */
@@ -868,10 +874,6 @@ a.icon-up-bg:hover {color: #212121;}
 }
 
 
-
-
-/* Preloader Styling */
-/* Container */
 /* Preloader Container */
 #preloader {
     position: fixed; /* Fixed position to cover the viewport */
@@ -889,7 +891,7 @@ a.icon-up-bg:hover {color: #212121;}
 
 /* Progress Container */
 .progress-container {
-    width: 80%; /* Adjust width as needed */
+    width: 80%; 
     background-color: #ddd; /* Light grey background for the progress bar */
     border-radius: 25px; /* Rounded corners */
     overflow: hidden; /* Prevent overflow of segments */
@@ -1003,3 +1005,226 @@ a.icon-up-bg:hover {color: #212121;}
     border-color: #f5c6cb;
   }
   
+
+/* Team Slider Custom Styles */
+.team-slider {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensure it wraps in smaller screens */
+    gap: 20px; /* Space between boxes */
+}
+
+
+/* Head of Department Card */
+.our-head-of-department {
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    margin: 0 20px; /* Horizontal margin for spacing */
+    flex: 1 1 30%; /* Adjusts box width to be responsive */
+}
+
+.our-head-of-department:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Picture */
+.our-head-of-department .pic {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #ff595e;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.our-head-of-department .pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.our-head-of-department:hover .pic img {
+    transform: perspective(1000px) rotateY(360deg) scale(1.1);
+    transition: transform 0.6s ease-in-out;
+    transform-origin: center;
+}
+
+
+/* .our-head-of-department:hover .pic img {
+    transform: scale(1.1) rotate(-5deg);  Gentle zoom-in and slight rotation 
+    transform-origin: center;  Keeps the image transformation centered 
+    transition: transform 0.4s ease-in-out;  Smoothens the transition 
+} */
+
+
+/* Team Member Name */
+.our-head-of-department .title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f0f0f0; /* Metallic base color */
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-shadow: 
+        1px 1px 1px rgba(0, 0, 0, 0.8), 
+        -1px -1px 1px rgba(255, 255, 255, 0.5); /* Metallic shine */
+}
+
+
+/* Team Member Position */
+.our-head-of-department .post {
+    display: inline-block;
+    font-size: 16px;
+    color: #555;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden; /* Ensure content does not overflow */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.our-head-of-department .post:after {
+    content: "";
+    width: 40px;
+    height: 4px;
+    background: #eee;
+    margin: 8px auto 0;
+    display: block;
+    border-radius: 2px;
+    transition: background 0.3s ease; /* Smooth transition for underline */
+}
+
+/* Biometric Scan Effect on Hover */
+.our-head-of-department .post:hover {
+    color: #ff595e; /* Change text color on hover */
+}
+
+.our-head-of-department .post:hover:after {
+    background: #ff595e; /* Change underline color on hover */
+}
+
+/* Biometric scan animation effect */
+.our-head-of-department .post:hover::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #ff595e;
+    bottom: 0;
+    left: 0;
+    animation: biometric-scan 0.6s linear forwards;
+}
+
+@keyframes biometric-scan {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    50% {
+        bottom: 50%;
+        opacity: 1;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+    }
+}
+
+
+/* Description */
+.our-head-of-department .description {
+    font-size: 14px;
+    color: #666;
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Social Media Icons */
+.our-head-of-department .social {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.our-head-of-department .social li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #0b0b0b; /* Dark theme */
+    color: #ffffffde; /* Neon green */
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.4s ease;
+}
+
+.our-head-of-department .social li a:hover {
+    transform: rotate(360deg);
+}
+
+
+/* Slick Carousel Navigation Arrows */
+.slick-prev:before,
+.slick-next:before {
+    color: #7740ff;
+    font-size: 30px;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 1200px) {
+    .our-head-of-department .pic {
+        width: 160px;
+        height: 160px;
+    }
+
+    .our-head-of-department .title {
+        font-size: 20px;
+    }
+
+    .our-head-of-department .post {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .our-head-of-department {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .our-head-of-department .description {
+        display: none; /* Hide description on medium screens for a cleaner look */
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .our-head-of-department .pic {
+        width: 140px;
+        height: 140px;
+    }
+
+    .our-head-of-department .social li a {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
