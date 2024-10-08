@@ -9,9 +9,14 @@
 
     <title>CCN</title>
 
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="La Communauté Congolaise de Nanjing soutient les étudiants et travailleurs de la République du Congo avec des programmes éducatifs, mentorat, événements culturels, et aide à la recherche d'emploi.">
+    <meta name="keywords" content="Congolaise de Nanjing, communauté congolaise, étudiants congolais en Chine, Nanjing, événements culturels, mentorat, recherche d'emploi, bourses d'études, développement professionnel">
+    <meta name="author" content="Communauté Congolaise de Nanjing">
+    <meta property="og:title" content="Communauté Congolaise de Nanjing">
+    <meta property="og:description" content="Unissez-vous à une communauté dynamique d'étudiants et travailleurs congolais à Nanjing, Chine.">
+    <meta property="og:url" content="https://congolaisdenanjing.com/">
+    <!-- <meta property="og:image" content="https://congolaisdenanjing.com/path_to_image.jpg"> -->
+
 
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -38,11 +43,8 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Font Awesome for Social Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 <body>
@@ -132,7 +134,7 @@
                         <h2>À propos de nous</h2>
                         <img src="assets/img/lines.svg" class="img-lines" alt="lines">
                         <p align="justify">Nous sommes une communauté dynamique et diversifiée d'étudiants et de travailleurs de la République du Congo. Notre communauté est construite sur une base d'unité, de diversité et de soutien mutuel, où chaque membre est valorisé et respecté.</p>
-                        <a href="" class="btn btn-fill" target="_blank" download>Obtenez notre présentation officielle</a>
+                        <a href="assets/" class="btn btn-fill" target="_blank" download>Obtenez notre présentation officielle</a>
                     </div>
                 </div>
             </div>
@@ -383,10 +385,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
-                    <a class="icon facebook-bg" href="#"><i class="icon-facebook"></i></a>
-                    <a class="icon twitter-bg" href="#"><i class="icon-twitter"></i></a>
-                    <!--<a class="icon instagram-bg" href="#"><i class="icon-instagram"></i></a>  Updated line -->
-                    <a class="icon linkedin-bg" href="#"><i class="icon-linkedin"></i></a>
+                    <a class="icon facebook-bg" href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a class="icon whatsapp-bg" href="https://wa.me/8615905163510?text=Bienvenue%20dans%20la%20communaut%C3%A9%20congolaise%20de%20Nanjing%20!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <!-- <a class="icon instagram-bg" href="#"><i class="fa-brands fa-instagram"></i></a> -->
+                    <a class="icon linkedin-bg" href="#"><i class="fa-brands fa-linkedin"></i></a>
+
                 </div>                
                 <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3"><p class="copyright">&copy; 2024. Tous droits réservés - CCN</p></div>
                 <div class="col-sm-4 col-xs-3">
@@ -523,6 +526,31 @@
         });
     })();
     </script>
+
+    <!-- JSON-LD (JavaScript Object Notation for Linked Data) -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Communauté Congolaise de Nanjing",
+      "url": "https://congolaisdenanjing.com/",
+      "logo": "https://congolaisdenanjing.com/path_to_logo.jpg",
+      "description": "La Communauté Congolaise de Nanjing soutient les étudiants et travailleurs du Congo avec des programmes éducatifs et culturels.",
+      "sameAs": [
+        "https://www.facebook.com/",
+        "https://wa.me/8615905163510?text=Bienvenue%20dans%20la%20communaut%C3%A9%20congolaise%20de%20Nanjing%20!"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-1234567890",
+        "contactType": "Service client",
+        "areaServed": "CN",
+        "availableLanguage": ["Fr", "En"]
+      }
+    }
+    </script>
+    <!-- JSON-LD (JavaScript Object Notation for Linked Data) -->
 
     
 
